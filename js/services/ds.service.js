@@ -10,7 +10,7 @@ function toggleDsItem(){
 }
 function loadDsItems(){
     const elDetails = document.querySelectorAll('details')
-    const dsStates = JSON.parse(localStorage.dsState)
+    const dsStates = localStorage.dsState ? JSON.parse(localStorage.dsState) : {}
     
     elDetails.forEach(elDetail => {
         elDetail.open = dsStates[elDetail.dataset.dsId]
