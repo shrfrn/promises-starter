@@ -18,12 +18,11 @@ function debounce(func, wait) {
     timeout = setTimeout(later, wait)
   }
 }
-function startTimer(label = 'time', initial = false) {
-    console.log(`Timer ${label} started...`)
-    console.group(label)
+function startTimer(label = 'time') {
+    console.groupCollapsed(label)
     
     const start = performance.now()
-    if(initial) console.log(`Starting ${label}...`)
+    console.log(`Starting ${label}...`)
     
     return {
         log: (msg) => console.log(`${label} ${msg ? msg : 'logged at' }: ${(performance.now() - start).toLocaleString()}`),
